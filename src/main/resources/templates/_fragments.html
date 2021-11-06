@@ -5,9 +5,10 @@
     <meta name="vieport" content="width=device-width, initial-scale=1.0">
     <title th:replace="${title}">Blog Contents</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="../../static/CSS/me.css" >
+    <link rel="stylesheet" href="./CSS/me.css" >
 </head>
 <body>
+
 <!--导航navigation -->
 <nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini">
     <div class="ui container" >
@@ -30,23 +31,6 @@
         <i class="sidebar icon"></i>
     </a>
 </nav>
-
-<br>
-<br>
-<br>
-<br>
-<div class="m-container-small">
-    <div class="ui error message">
-        <div class="ui container">
-            <h2>500</h2>
-            <h2>Sorry, there is no exist</h2>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
 
 <!--底部footer -->
 <footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive">
@@ -84,6 +68,25 @@
     </div>
 
 </footer>
+
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    <script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+        return false;
+    });
+
+    $('#payButton').popup({
+        popup : $('.payQR.popup'),
+        on : 'click',
+        position: 'bottom center'
+    });
+
+</script>
+</th:block>
 
 </body>
 </html>
