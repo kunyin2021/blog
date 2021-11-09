@@ -17,6 +17,7 @@ public class User {
     private String email;
     private String avatar;
     private Integer type;
+    private String username;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdTime;
     @Temporal(TemporalType.TIMESTAMP)
@@ -28,7 +29,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String nickname, String password, String email, String avatar, Integer type, Date createdTime, Date updateTime) {
+    public User(Long id, String nickname, String password, String email, String avatar, Integer type, Date createdTime, Date updateTime, String username) {
         this.id = id;
         this.nickname = nickname;
         this.password = password;
@@ -37,6 +38,15 @@ public class User {
         this.type = type;
         this.createdTime = createdTime;
         this.updateTime = updateTime;
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Long getId() {
